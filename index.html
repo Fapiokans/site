@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="main/manifest.json">
+  <link rel="icon" type="image/png" href="main/icon-192x192.png">
+  <link rel="apple-touch-icon" href="main/icon-192x192.png">
+  <title>Fapiokansホームページ</title>
+  <script>
+    window.addEventListener('load', function () {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register("sw.js").then(function (registration){
+        })
+      }
+    })
+  </script>
+  <style>
+    .logo-home {
+      opacity: 0;
+      animation: logo-In 1.5s ease 0.2s forwards;
+    }
+    .logo-icon {
+      position: relative;
+      opacity: 0;
+      animation: logo-In-img 1.5s ease 0.4s forwards;
+      width:70%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%);
+    }
+    .links {
+      position: relative;
+      width: 100%;
+      left:0;
+      background-color: #999;
+      opacity: 0;
+      animation: links-In 1.5s ease 0.6s forwards;
+    }
+    .links div {
+      border: solid 3px;
+    }
+    @keyframes logo-In {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes logo-In-img {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes links-In {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="logo-home">Fapiokansのホームページ</h1>
+  <img class="logo-icon" src="main/icon-512x512.png">
+  <div class="links">
+    <div>
+      <a href="tapiopon">タピオポンのサイト</a>
+      <p>自作キャラクターのサイトです</p>
+    </div>
+    <div>
+      <a href="linetxtedit">Line Txt search</a>
+      <p>ラインのトーク履歴を検索できるサイトです(テスト段階)</p>
+    </div>
+  </div>
+</body>
+</html>
