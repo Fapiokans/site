@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #result {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 50%;
+      font-size:6px;
+    }
+    button ,input {
+      font-size:24px;
+    }
+  </style>
+  <script>
+    let txt = '';
+    function fileChanged(input) {
+      const reader = new FileReader();
+      reader.onload = (function() {
+        txt = reader.result;
+        result.value = reader.result
+        talkname.innerHTML = 'NAME '+result.value.split('\n')[0].split('[LINE] ')[1];
+        talkdata.innerHTML = 'DATE '+result.value.split('\n')[1];
+      })
+      reader.readAsText(input.files[0]);
+    }
+    function namesearch(){
+      let nameinput = result.value.split('\n');
+      result.value='';
+      for(let i=0;i<nameinput.length;i++){
+        if(nameinput[i].match(names.value)){
+          result.value+=nameinput[i]+'\n'
+        }
+      }
+    }
+    function reset() {
+      result.value = txt;
+    }
+  </script>
+</head>
+<body>
+  <input type="file" onchange="fileChanged(this)">
+  <br>
+  <p>詳細データ</p>
+  <p id="talkname">-</p>
+  <p id="talkdata">-</p>
+  <input id="names" placeholder="特定の文字を検索">
+  <button onclick="namesearch()">検索する</button>
+  <button onclick="reset()">検索をリセット</button>
+  <textarea id="result"></textarea>
+</body>
+</html>
