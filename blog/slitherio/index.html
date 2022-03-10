@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>スマホでスリザリオにプラグイン導入</title>
+  <style>
+    video {
+      position: relative;
+      width:100%;
+      padding-top:56.25%;
+    }
+  </style>
+</head>
+<body>
+  <h2>用意するもの</h2>
+  <li>android</li>
+  <li>ゲームコントローラー(これがないとまともに操作できない)</li>
+  <hr>
+  <p>まずはKiwi Browserをダウンロードしよう</p>
+  <a href="https://play.google.com/store/apps/details?id=com.kiwibrowser.browser&hl=ja&gl=US">Kiwi Browser</a>
+  <hr>
+  <p>そしたらKiwi Browserを開いてスリザリオのプラグインを導入します</p>
+  <a href="https://chrome.google.com/webstore/detail/slitherio-mods-zoom-unloc/picmfnjcnlmcnbjkcdlibagaoodhpjgo">プラグイン</a>
+  <hr>
+  <p>そしたらスリザリオを開いてPC版サイトにします</p>
+  <a href="http://slither.io/">スリザリオ</a>
+  <hr>
+  <p>開いたら下記のコードをURLのアドレスバーにコピペして実行します</p>
+  <input type="text" onfocus="this.select();" value="javascript:document.body.requestFullscreen();!function(){if("getGamepads"in navigator){var t=function(){var e=navigator.getGamepads()[0];if(e){var a=e.axes[0],i=e.axes[1];Math.sqrt(a*a+i*i)<.1&&(a=i=0),xm=100*a,ym=100*i,setAcceleration(e.buttons[0].value);var n=mc.getContext("2d");n.save(),n.beginPath(),n.strokeStyle=e.buttons[0].value?"white":"lightGreen",n.arc(xm+mc.width/2,ym+mc.height/2,8,0,2*Math.PI),n.stroke(),n.restore()}window.requestAnimationFrame(t)};t()}}(); void(0);">
+  <hr>
+  <p>これでIPアドレスを指定してコントローラーをつかってスリザリオができるようになりました</p>
+  <p>ここに動画も載せておきます</p>
+  <video src="https://media.discordapp.net/attachments/949163127122059264/951565519381749760/blog.mp4" controls></video>
+</body>
+</html>
